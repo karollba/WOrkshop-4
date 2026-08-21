@@ -1,48 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="/WEB-INF/views/header.jsp"%>
-<div class="container-fluid">
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dodaj Książkę</h1>
-    <a href="<c:url value='/admin/books/list'/>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-      <i class="fas fa-download fa-sm text-white-50"></i> Lista Książek</a>
-  </div>
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Dodawanie użytkownika</h6>
-    </div>
-    <div class="card-body">
-      <form method="post">
+<html>
+  <head>
+    <title>Dodaj książkę</title>
+  </head>
+  <body>
 
-        <div class="form-group">
-          <label for="isbn">ISBN</label>
-          <input name="isbn" type="text" class="form-control" id="isbn" placeholder="ISBN">
-      </div>
-      <div class="form-group">
-          <label for="title">Title</label>
-          <input name="title" type="text" class="form-control" id="title" placeholder="Title">
-      </div>
-      <div class="form-group">
-              <label for="author">Author</label>
-              <input name="author" type="text" class="form-control" id="author" placeholder="author">
-          </div>
+  <h1>Dodaj książkę</h1>
+  <a href="list"> Wróć do listy</a>
 
-    <div class="form-group">
-          <label for="publisher">Wydawca</label>
-          <input name="publisher" type="text" class="form-control" id="publisher" placeholder="publisher">
-      </div>
-        <div class="form-group">
-          <label for="type">Typ</label>
-          <input name="type" type="text" class="form-control" id="type" placeholder="type">
-      </div>
-
-        <button type="submit" class="btn btn-primary">Dodaj</button>
-      </form>
-
-    </div>
-  </div>
-</div>
-<%@ include file="/WEB-INF/views/footer.jsp" %>
-
-
+       <form method="post" action="add">
+       <label> ISBN: <input type="text" name="isbn"></label><br>
+       <label> Tytuł: <input type="text" name="title"></label><br>
+       <label> Autor: <input type="text" name="author"></label><br>
+       <label> Wydawca: <input type="text" name="publisher"></label><br>
+       <label> Typ: <input type="text" name="type"></label><br>
+        <button type="submit">Dodaj</button>
+  </body>
+</html>

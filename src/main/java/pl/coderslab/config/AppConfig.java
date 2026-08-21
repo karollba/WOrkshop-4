@@ -26,25 +26,28 @@ public class AppConfig implements WebMvcConfigurer {
         configurer.enable();
     }
 
-    @Bean
-    public LocalEntityManagerFactoryBean entityManagerFactory() {
-        LocalEntityManagerFactoryBean entityManagerFactoryBean
-                = new LocalEntityManagerFactoryBean();
-        entityManagerFactoryBean.setPersistenceUnitName("bookstorePersistenceUnit");
-        return entityManagerFactoryBean;
-    }
+//    @Bean
+//    public LocalEntityManagerFactoryBean entityManagerFactory() {
+//        LocalEntityManagerFactoryBean entityManagerFactoryBean
+//                = new LocalEntityManagerFactoryBean();
+//        entityManagerFactoryBean.setPersistenceUnitName("bookstorePersistenceUnit");
+//        return entityManagerFactoryBean;
+//    }
 
-    @Bean
-    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager(entityManagerFactory);
-    }
+//    @Bean
+//    public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+//        return new JpaTransactionManager(entityManagerFactory);
+//    }
 
     @Bean
     public InternalResourceViewResolver viewResolver() {
-        InternalResourceViewResolver resol = new InternalResourceViewResolver();
-        resol.setPrefix("/WEB-INF/views/");
-        resol.setSuffix(".jsp");
-        return resol;
+        InternalResourceViewResolver resolver =
+                new InternalResourceViewResolver();
+
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setSuffix(".jsp");
+
+        return resolver;
     }
 
 }
