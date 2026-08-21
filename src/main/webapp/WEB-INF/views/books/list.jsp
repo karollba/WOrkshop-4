@@ -33,14 +33,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="book" items="${books}">
+                    <c:forEach var="book" items="${book}">
                       <tr>
                           <td>${book.id}</td>
-                          <td>${books.isbn}</td>
-                          <td>${books.title}</td>
-                          <td>${books.author}</td>
-                          <td>${books.publisher}</td>
-                          <td>${books.type}</td>
+                          <td>${book.isbn}</td>
+                          <td>${book.title}</td>
+                          <td>${book.author}</td>
+                          <td>${book.publisher}</td>
+                          <td>${book.type}</td>
                       <td>
                         <a href="edit?id=${book.id}" class="btn btn-info btn-sm">Edit</a>
                         <a href="delete?id=${book.id}" class="btn btn-info btn-sm">Usuń</a>
@@ -55,4 +55,4 @@
         </div>
       </div>
 
-<%@include file="/WEB_INF/views/footer.jsp"%>
+<%@include file="/WEB-INF/views/footer.jsp"%>

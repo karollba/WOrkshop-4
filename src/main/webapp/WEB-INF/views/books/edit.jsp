@@ -33,8 +33,8 @@
         </div>
 
         <div class="form-group">
-          <label for="wydawca">Wydawca</label>
-          <input value="${book.publisher}" name="wydawca" type="text" class="form-control" id="wydawca" placeholder="wydawca">
+          <label for="publisher">Wydawca</label>
+          <input value="${book.publisher}" name="publisher" type="text" class="form-control" id="publisher" placeholder="publisher">
         </div>
         <div class="form-group">
           <label for="type">Typ</label>
