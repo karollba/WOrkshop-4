@@ -1,7 +1,5 @@
-package pl.coderslab.controller;
+package pl.coderslab.model;
 
-
-import pl.coderslab.model.Book;
 
 import java.util.List;
 import java.util.Optional;

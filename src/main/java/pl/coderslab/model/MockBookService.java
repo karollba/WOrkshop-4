@@ -1,16 +1,18 @@
-package pl.coderslab.controller;
+package pl.coderslab.model;
 
-import pl.coderslab.model.Book;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MockBookService implements BookService{
 
     private static Long nextId = 4L;
-
     private List<Book> list;
+
+
     public MockBookService() {
         list = new ArrayList<>();
         list.add(new Book(1L, "9788324631766", "Thinking in Java", "Bruce	Eckel", "Helion", "programming"));
@@ -24,26 +26,30 @@ public class MockBookService implements BookService{
 
     @Override
     public List<Book> getBooks() {
-        return List.of();
+        return list;
     }
 
     @Override
-    public Optional<Book> getbyId(Long id) {
-        return Optional.empty();
+    public Optional<Book> get(Long id) {
+        return list.stream()
+                .filter(b -> b.getId() == id)
+                .findFirst();
     }
 
     @Override
     public void add(Book book) {
-
+        book.setId(Math.toIntExact(nextId++));
+        list.add(book);
     }
 
     @Override
     public void delete(Long id) {
-
+        list.removeIf(b -> b.getId() == id);
     }
 
     @Override
     public void update(Book book) {
-
+        delete(book.getId());
+        list.add(book);
     }
 }
