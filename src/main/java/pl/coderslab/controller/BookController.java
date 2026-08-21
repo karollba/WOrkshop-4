@@ -63,6 +63,4 @@ public class BookController {
         bookService.delete(id);
         return ResponseEntity.ok("Usunięto książkę");
     }
-
-
 }
