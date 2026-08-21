@@ -1,0 +1,72 @@
+package pl.coderslab.model;
+
+public class Book {
+    private long id;
+    private long isbn;
+    private String title;
+    private String author;
+    private String publisher;
+    private String type;
+
+    public Book() {
+
+    }
+
+    public Book(long id, long isbn, String title, String author, String publisher, String type) {
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.author = author;
+        this.publisher = publisher;
+        this.type = type;
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public long getIsbn() {
+        return isbn;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setIsbn(long isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+}
