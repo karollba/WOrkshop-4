@@ -2,7 +2,7 @@ package pl.coderslab.model;
 
 public class Book {
     private long id;
-    private long isbn;
+    private String isbn;
     private String title;
     private String author;
     private String publisher;
@@ -12,7 +12,7 @@ public class Book {
 
     }
 
-    public Book(long id, long isbn, String title, String author, String publisher, String type) {
+    public Book(long id, String isbn, String title, String author, String publisher, String type) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
@@ -26,7 +26,7 @@ public class Book {
         return id;
     }
 
-    public long getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
@@ -54,7 +54,7 @@ public class Book {
         this.author = author;
     }
 
-    public void setIsbn(long isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
